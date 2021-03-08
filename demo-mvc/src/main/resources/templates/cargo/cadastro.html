@@ -13,7 +13,7 @@
                     </li>
                 </ul>
             </div>
-            <a class="btn btn-primary btn-md" href="/cargos/listar" role="button">
+            <a class="btn btn-primary btn-md" th:href="@{/cargos/listar}" role="button">
                 <span class="oi oi-spreadsheet" title="Cadastro" aria-hidden="true"></span>
                 <span>Listar Cargos</span>
             </a>
@@ -24,7 +24,9 @@
             <div th:replace="fragments/alert"></div>
                         
             <form th:action="${cargo.id == null} ? @{/cargos/salvar} : @{/cargos/editar}" 
-            	  th:object="${cargo}" method="POST">
+            	    th:object="${cargo}" method="POST">
+            	  
+            	  <div th:replace="fragments/validacao :: validacao"></div>
                 
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -33,15 +35,15 @@
                                th:field="*{nome}" />
                     </div>
                     <div class="form-group col-md-4">
-                        <label for="cargo">Cargo</label>
-                        <select id="cargo" class="form-control" th:field="*{cargo}">
+                        <label for="departamento">Departamento</label>
+                        <select id="departamento" class="form-control" th:field="*{departamento}">
                             <option value="">Selecione</option>
-                            <option th:each="c : ${cargos}" 
-                            		th:value="${c.id}" th:text="${c.nome}" >Financeiro</option>
+                            <option th:each="d : ${departamentos}" 
+                            		th:value="${d.id}" th:text="${d.nome}" >Administração</option>
                         </select>
                     </div>
                 </div>
-                <input type="hidden" id="id" th:field="*{id}" />
+                <input type="hidden" id="id" th:field="*{id}" />           
                 <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
             </form>
         </div>

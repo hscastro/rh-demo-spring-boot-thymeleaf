@@ -113,6 +113,7 @@ body {
 }
 
 .footer-copy {
+	position: relative;
 	font-size: 92%;
 	display: block;
 	color: #777777;

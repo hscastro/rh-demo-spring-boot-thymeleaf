@@ -6,6 +6,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 
 /**Projeto rh-software
  * Desenvolvedor: Antonio Halyson - email:halisonsc5@gmail.com
@@ -17,6 +20,8 @@ import javax.persistence.Table;
 @Table(name = "DEPARTAMENTOS")
 public class Departamento extends AbstractEntity<Long> {
 
+	@NotBlank(message = "Informe um nome")
+	@Size(min = 3, max = 80, message = "O nome departamento deve ter entre {min} e {max} caracteres.")
 	@Column(name = "nome", nullable = false, unique = true, length = 80)
 	private String nome;
 
