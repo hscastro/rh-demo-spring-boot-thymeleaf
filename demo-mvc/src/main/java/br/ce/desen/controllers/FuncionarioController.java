@@ -40,13 +40,14 @@ public class FuncionarioController {
 	@PostMapping("/salvar")
 	public String salvar(@Valid Funcionario funcionario, BindingResult result, RedirectAttributes attr) {
 		
-		if(result.hasErrors()) {
+		if(result.hasErrors()) {			
 			return "/funcionario/cadastro";
 		}
 		
-		funcionarioService.salvar(funcionario);
+		funcionarioService.salvar(funcionario);		
 		attr.addFlashAttribute("success", "Funcionário inserido com sucesso.");
 		return "redirect:/funcionarios/cadastrar";
+		
 	}
 	
 	@GetMapping("/editar/{id}")

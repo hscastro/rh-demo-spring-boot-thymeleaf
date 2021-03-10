@@ -30,13 +30,13 @@ public class Endereco extends AbstractEntity<Long> {
 	@Column(nullable = false)
 	private String cidade;
 	
-	@NotBlank(message = "{NotNull.endereco.uf}")	
+	@NotNull(message = "{NotNull.endereco.uf}")	
 	@Column(nullable = false, length = 2)
 	@Enumerated(EnumType.STRING)
 	private Uf uf;	
 	
 	@NotBlank
-	@Size(min = 9, max = 9, message = "{NotNull.endereco.cep}")
+	@Size(min = 9, max = 9, message = "{Size.endereco.cep}")
 	@Column(nullable = false, length = 9)
 	private String cep;	
 	

@@ -66,16 +66,16 @@ public class CargoController {
 		return "redirect:/cargos/cadastrar"; 		
 	}
 
-//	@GetMapping("/excluir/{id}")
-//	public String excluir(@PathVariable("id") Long id, RedirectAttributes attr) {
-//		if(livroService.cargoTemFuncionario(id)) {			
-//			attr.addAttribute("fail", "cargo não removido. Possui funcionário(s) vinculado(s).");
-//		}else {
-//			livroService.excluir(id);
-//			attr.addAttribute("success", "Cargo excluído com sucesso.");			
-//		}		
-//		return "redirect:/cargos/listar";
-//	}	
+	@GetMapping("/excluir/{id}")
+	public String excluir(@PathVariable("id") Long id, RedirectAttributes attr) {
+		if(cargoService.cargoTemFuncionario(id)) {			
+			attr.addAttribute("fail", "Cargo não removido. Possui funcionário(s) vinculado(s).");
+		}else {
+			cargoService.excluir(id);
+			attr.addAttribute("success", "Cargo excluído com sucesso.");			
+		}		
+		return "redirect:/cargos/listar";
+	}	
 
 	
 	@GetMapping("/listar")

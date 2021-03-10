@@ -51,13 +51,13 @@ public class CargoSeriveImpl implements CargoService {
 		return dao.findAll();
 	}
 
-//	@Override
-//	public boolean cargoTemFuncionario(Long id) {
-//		if(dao.findById(id).getFuncionarios().isEmpty()) {
-//			return false;
-//		}
-//		return true;
-//	}
+	@Override
+	public boolean cargoTemFuncionario(Long id) {
+		if(dao.findById(id).getFuncionarios().isEmpty()) {
+			return false;
+		}
+		return true;
+	}
 
 
 }

@@ -103,7 +103,7 @@ body {
  * Footer
  */
 .layout-footer {
-	position: fixed;
+	position: relative;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -112,8 +112,7 @@ body {
 	border-top: 1px solid #eeeeee;
 }
 
-.footer-copy {
-	position: relative;
+.footer-copy {	
 	font-size: 92%;
 	display: block;
 	color: #777777;

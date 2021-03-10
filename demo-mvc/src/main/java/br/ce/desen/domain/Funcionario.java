@@ -37,7 +37,7 @@ public class Funcionario extends AbstractEntity<Long> {
 	private BigDecimal salario;
 	
 	@NotNull
-	@PastOrPresent(message = "{Data de entrada deve ser igual ou anteriro a atual.}")
+	@PastOrPresent(message = "{PastOrPresent.funcionario.dataEntrada}")
 	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name = "data_entrada", columnDefinition = "DATE")
 	private LocalDate dataEntrada;
