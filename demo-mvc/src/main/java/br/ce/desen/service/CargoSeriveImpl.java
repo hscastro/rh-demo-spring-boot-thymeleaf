@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.ce.desen.dao.CargoDao;
+import br.ce.desen.dao.util.PaginacaoUtil;
 import br.ce.desen.domain.Cargo;
 
 /**Projeto Sistema de RH
@@ -57,6 +58,11 @@ public class CargoSeriveImpl implements CargoService {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public PaginacaoUtil<Cargo> buscarPorPagina(int pagina) {		
+		return dao.buscarPorPagina(pagina);
 	}
 
 

@@ -2,6 +2,7 @@ package br.ce.desen.dao;
 
 import java.util.List;
 
+import br.ce.desen.dao.util.PaginacaoUtil;
 import br.ce.desen.domain.Cargo;
 
 
@@ -15,6 +16,8 @@ public interface CargoDao {
 	
 	Cargo findById(Long id);
 	
-	List<Cargo> findAll();
-
+	List<Cargo> findAll();	
+	
+	PaginacaoUtil<Cargo> buscarPorPagina(int pagina);
+	
 }

@@ -2,6 +2,7 @@ package br.ce.desen.service;
 
 import java.util.List;
 
+import br.ce.desen.dao.util.PaginacaoUtil;
 import br.ce.desen.domain.Cargo;
 
 
@@ -18,5 +19,7 @@ public interface CargoService {
 	List<Cargo> buscarTodos();
 
 	boolean cargoTemFuncionario(Long id);
+	
+	PaginacaoUtil<Cargo> buscarPorPagina(int pagina);
 
 }
